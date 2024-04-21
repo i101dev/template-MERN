@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import express from "express";
 import index_router from "./routes/index";
+import auth_router from "./routes/auth";
 //
 import { connectDB } from "../config/connectDB";
 import { SocketIOServer } from "./Sockets";
@@ -36,6 +37,7 @@ app.use(express.json());
 app.use(morgan("tiny"));
 //
 app.use(index_router);
+app.use(auth_router);
 //
 //
 console.log("\n*** >>> Server: ", process.env.PORT);

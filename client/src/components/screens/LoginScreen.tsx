@@ -5,7 +5,6 @@ import MyInput from "../../hooks/MyInput";
 //
 import { MyApi } from "../../hooks/MyApi";
 import { PL, RT, T } from "../../../../__PKG__/X";
-import { FaAngleDoubleLeft } from "react-icons/fa";
 import { UseRoot, RootCntxType } from "../../providers/RootCntx";
 //
 //
@@ -19,7 +18,6 @@ export default function LoginScreen() {
         takeRes,
         set_userDat,
         set_viewType,
-        goHome,
         //
     } = UseRoot() as RootCntxType;
     //
@@ -28,8 +26,9 @@ export default function LoginScreen() {
     const passwordInput = MyInput("Password", "", false, T.Input.PW);
     //
     //
-    const loginHandler = async () => {
+    const loginHandler = async (e: any) => {
         //
+        e.preventDefault();
         //
         const payload: PL.Login = {
             user_id: userIdInput.value as string,
@@ -51,17 +50,10 @@ export default function LoginScreen() {
     //
     //
     return (
-        <div className="SP-Y-1 M-auto">
+        <form className="SP-Y-1 M-auto Pos-Cen Panel-D P-1" onSubmit={loginHandler}>
             <div>{userIdInput.component}</div>
             <div>{passwordInput.component}</div>
-            <div className="SP-X-1 AC ML-auto">
-                <button className="Btn FR" onClick={goHome}>
-                    <FaAngleDoubleLeft size="2.5rem" />
-                </button>
-                <button className="Btn" onClick={loginHandler}>
-                    Login
-                </button>
-            </div>
-        </div>
+            <input type="submit" className="Btn" value="Login" />
+        </form>
     );
 }

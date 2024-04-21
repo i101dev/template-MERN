@@ -2,7 +2,6 @@
 //
 import { MyApi } from "../../hooks/MyApi";
 import { PL, RT, T } from "../../../../__PKG__/X";
-import { FaAngleDoubleLeft } from "react-icons/fa";
 import { UseRoot, RootCntxType } from "../../providers/RootCntx";
 //
 import MyInput from "../../hooks/MyInput";
@@ -11,7 +10,7 @@ import MyInput from "../../hooks/MyInput";
 export default function RegisterScreen() {
     //
     //
-    const { takeRes, set_userDat, set_viewType, goHome } = UseRoot() as RootCntxType;
+    const { takeRes, set_userDat, set_viewType } = UseRoot() as RootCntxType;
     const { fetch_POST } = MyApi();
     //
     const emailInput = MyInput("Email", "", false, T.Input.TXT);
@@ -20,8 +19,9 @@ export default function RegisterScreen() {
     const passConfInput = MyInput("Confirm password", "", false, T.Input.PW);
     //
     //
-    const registerHandler = async () => {
+    const registerHandler = async (e: any) => {
         //
+        e.preventDefault();
         //
         if (passConfInput.value !== passwordInput.value) {
             window.alert("Password mismatch");
@@ -51,19 +51,12 @@ export default function RegisterScreen() {
     //
     //
     return (
-        <div className="SP-Y-1 M-auto">
+        <form className="SP-Y-1 M-auto Pos-Cen Panel-D P-1" onSubmit={registerHandler}>
             <div>{emailInput.component}</div>
             <div>{userIdInput.component}</div>
             <div>{passwordInput.component}</div>
             <div>{passConfInput.component}</div>
-            <div className="SP-X-1 AC ML-auto">
-                <button className="Btn FR" onClick={goHome}>
-                    <FaAngleDoubleLeft size="2.5rem" />
-                </button>
-                <button className="Btn" onClick={registerHandler}>
-                    Register
-                </button>
-            </div>
-        </div>
+            <input type="submit" className="Btn" value="Register" />
+        </form>
     );
 }

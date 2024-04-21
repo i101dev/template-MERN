@@ -19,7 +19,9 @@ function LoadingWall() {
 }
 //
 export enum ViewType {
-    MAIN = "Main",
+    HOME = "Home",
+    LOGIN = "Login",
+    REGISTER = "Register",
 }
 export const headerLinks: string[] = Object.values(ViewType);
 //
@@ -59,7 +61,7 @@ export default function RootProvider({ children }: any) {
     const [userDat, set_userDat] = React.useState<T.UserDat | null>(null);
     //
     const [loading, set_loading] = React.useState<boolean>(false);
-    const [viewType, set_viewType] = React.useState<string>(ViewType.MAIN);
+    const [viewType, set_viewType] = React.useState<string>(ViewType.HOME);
     const [userAlerts, set_userAlerts] = React.useState<RES.UserAlert[]>([]);
     //
     //

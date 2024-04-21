@@ -37,20 +37,19 @@ services:
         volumes:
             - redis_data_container:/data/redis
 
-    postgres:
-        image: postgres
-        shm_size: 128mb
-        environment:
-            POSTGRES_PASSWORD: abc123
+    # postgres:
+    #     image: postgres
+    #     shm_size: 128mb
+    #     environment:
+    #         POSTGRES_PASSWORD: abc123
 
-    adminer:
-        image: adminer
-        ports:
-            - 8080:8080
+    # adminer:
+    #     image: adminer
+    #     ports:
+    #         - 8080:8080
 
 volumes:
     mongodb_data_container:
         driver: local
     redis_data_container:
         driver: local
-

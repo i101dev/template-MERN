@@ -13,17 +13,12 @@ export default function ProfileScreen() {
     //
     //
     return (
-        <div className="SP-Y-1 FG-1">
-            <div className="DF JSB AS">
-                <div className="Split-2 AS GG-1 FG-1">
-                    <div className="B-1-D10 Split-2">
-                        <div className="FS-2 c-b BG-D12 P-1 BR-1-D10">
-                            {userDat?.email}
-                        </div>
-                        <div className="FS-2 c-b BG-D12 P-1">{userDat?.user_id}</div>
-                    </div>
+        <div className="SP-Y-1 FG-1 Pos-Cen">
+            <div className="SP-Y-1 P-1 Panel-D">
+                <div className="FS-2 TXT-C c-b">
+                    <span className="FS-1-6 C-M6 MR-2">Username:</span> {userDat?.user_id}
                 </div>
-                <button className="Btn" onClick={goHome}>
+                <button className="OBtn" onClick={goHome}>
                     Logout
                 </button>
             </div>
