@@ -20,4 +20,6 @@ export enum GET {
 }
 export enum POST {
     test = "/test",
+    login = "/login",
+    register = "/register",
 }

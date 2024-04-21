@@ -27,6 +27,10 @@ export type RootCntxType = {
     //
     takeRes: (x: any) => void;
     ExitRoot: () => void;
+    goHome: () => void;
+    //
+    token: string | null;
+    set_token: (s: string) => void;
     //
     loading: boolean;
     set_loading: (loading: boolean) => void;
@@ -51,18 +55,24 @@ export const UseRoot = () => React.useContext(RootCntx);
 export default function RootProvider({ children }: any) {
     //
     //
-    const [loading, set_loading] = React.useState<boolean>(false);
-    //
-    //
+    const [token, set_token] = React.useState<string | null>(null);
     const [userDat, set_userDat] = React.useState<T.UserDat | null>(null);
+    //
+    const [loading, set_loading] = React.useState<boolean>(false);
     const [viewType, set_viewType] = React.useState<string>(ViewType.MAIN);
     const [userAlerts, set_userAlerts] = React.useState<RES.UserAlert[]>([]);
     //
     //
     function ExitRoot(): void {
+        set_token("");
+        set_userDat(null);
         set_loading(false);
         set_userAlerts([]);
+    }
+    function goHome() {
+        set_token("");
         set_userDat(null);
+        set_viewType(T.ViewType.Home);
     }
     //
     //
@@ -88,6 +98,10 @@ export default function RootProvider({ children }: any) {
                 //
                 takeRes,
                 ExitRoot,
+                goHome,
+                //
+                token,
+                set_token,
                 //
                 loading,
                 set_loading,

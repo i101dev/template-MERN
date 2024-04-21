@@ -28,7 +28,7 @@ export default function ({ children }: any) {
     //
     //
     // ------------------------------------------------------------------
-    const { takeRes, set_loading, set_userAlerts } = UseRoot() as RootCntxType;
+    const { userDat, takeRes, set_loading, set_userAlerts } = UseRoot() as RootCntxType;
     //
     const [isConnected, setIsConnected] = React.useState<boolean>(false);
     //
@@ -73,7 +73,7 @@ export default function ({ children }: any) {
         try {
             //
             const newSocket = io(URL.BASE, {
-                query: { user_id: "jimbo" },
+                query: { user_id: userDat ? userDat.user_id : "jimbo" },
             });
             //
             newSocket.on(SX.disconnect, () => setIsConnected(false));
