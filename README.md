@@ -1,4 +1,7 @@
-# Setup
+# MERN Stack with Typescript & Vite
+
+-   Socket.io out of the box
+-   Authentication out of the box
 
 ## Prerequisites
 
