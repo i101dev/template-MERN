@@ -41,11 +41,11 @@ export function MyApi() {
         //
         set_loading(false);
         //
-        if (response.ok) {
-            return response.json();
-        } else {
+        if (!response.ok) {
             LogError(response);
         }
+        //
+        return response.json();
     };
     //
     //

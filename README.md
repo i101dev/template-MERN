@@ -2,6 +2,7 @@
 
 -   Socket.io out of the box
 -   Authentication out of the box
+-   Server and client decoupled by design
 
 ## Prerequisites
 
