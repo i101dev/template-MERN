@@ -10,7 +10,17 @@ import UserDat from "../_models/UserDat";
 // ===============================================================
 // ---------------------------------------------------------------
 //
-function setCookieAndToken(user_id: any, res: Response) {
+function setCookieAndToken(
+    user_id: any,
+    res: Response
+): { token: string; success: boolean } {
+    //
+    if (!process.env.COOKIE_NAME || !process.env.ADMIN_KEY) {
+        return { token: "", success: false };
+    }
+    //
+    // console.log("COOKIE_NAME -", process.env.COOKIE_NAME);
+    // console.log("ADMIN_KEY -", process.env.ADMIN_KEY);
     //
     const token = jwt.sign({ user_id }, process.env.ADMIN_KEY!, {
         expiresIn: "2d",
@@ -21,7 +31,7 @@ function setCookieAndToken(user_id: any, res: Response) {
         maxAge: 2 * 24 * 60 * 60 * 1000,
     });
     //
-    return token;
+    return { token, success: true };
 }
 //
 // ===============================================================
@@ -56,16 +66,21 @@ export async function login(req: Request, res: Response) {
         //
     } else {
         //
-        success = true;
+        const cookieAndToken = setCookieAndToken(user_id, res);
         //
-        token = setCookieAndToken(user_id, res);
-        //
-        H.addUserAlert(userAlerts, "Welcome back", ["no updates to report"]);
+        if (cookieAndToken.success) {
+            success = true;
+            token = cookieAndToken.token;
+            H.addUserAlert(userAlerts, "Welcome back", ["no updates to report"]);
+            //
+        } else {
+            H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
+        }
     }
     // ************************************************
     //
     //
-    res.status(success ? 200 : 404).send({ success, userAlerts, userDat, token });
+    res.status(200).send({ success, userAlerts, userDat, token });
 }
 export async function register(req: Request, res: Response) {
     //
@@ -101,22 +116,30 @@ export async function register(req: Request, res: Response) {
         try {
             //
             //
-            const newUserDat: T.UserDat = {
-                email,
-                user_id,
-                password,
-                enabled: true,
-                mayRef: false,
-            };
+            const cookieAndToken = setCookieAndToken(user_id, res);
             //
             //
-            userDat = await UserDat.create(newUserDat);
+            if (cookieAndToken.success) {
+                //
+                const newUserDat: T.UserDat = {
+                    email,
+                    user_id,
+                    password,
+                    enabled: true,
+                    mayRef: false,
+                };
+                //
+                userDat = await UserDat.create(newUserDat);
+                //
+                success = true;
+                token = cookieAndToken.token;
+                //
+                H.addUserAlert(userAlerts, "Welcome", ["registration success"]);
+                //
+            } else {
+                H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
+            }
             //
-            token = setCookieAndToken(user_id, res);
-            //
-            H.addUserAlert(userAlerts, "Welcome", ["registration success"]);
-            //
-            success = true;
             //
         } catch (error: any) {
             //
@@ -129,7 +152,7 @@ export async function register(req: Request, res: Response) {
     //
     //
     //
-    res.status(success ? 200 : 404).send({ success, userAlerts, userDat, token });
+    res.status(200).send({ success, userAlerts, userDat, token });
 }
 export async function tokenEntry(req: Request, res: Response) {
     //
@@ -160,19 +183,26 @@ export async function tokenEntry(req: Request, res: Response) {
         //
     } else {
         //
-        token = setCookieAndToken(user_id, res);
+        const cookieAndToken = setCookieAndToken(user_id, res);
         //
-        success = true;
-        //
-        H.addUserAlert(userAlerts, "Welcome back", [
-            "token entry success",
-            "no updates to report",
-        ]);
+        if (cookieAndToken.success) {
+            //
+            success = true;
+            token = cookieAndToken.token;
+            //
+            H.addUserAlert(userAlerts, "Welcome back", [
+                "token entry success",
+                "no updates to report",
+            ]);
+            //
+        } else {
+            H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
+        }
     }
     // ************************************************
     //
     //
-    res.status(success ? 200 : 404).send({ success, userAlerts, userDat, token });
+    res.status(200).send({ success, userAlerts, userDat, token });
 }
 export async function allUsers(req: Request, res: Response) {
     //
