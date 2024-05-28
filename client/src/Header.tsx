@@ -43,32 +43,32 @@ export default function Header() {
     const clk_closeMenu = () => {
         set_navMenuCls("nav__menu");
     };
-    const clk_navItem = (viewType: string) => {
+    const clk_navItem = () => {
+        clk_closeMenu();
+        set_viewType(ViewType.Home);
+    };
+    const clk_navAction = (viewType: string) => {
         clk_closeMenu();
         set_viewType(viewType);
     };
     //
     //
     const NavItem = (name: string) => {
-        //
-        let cls = "";
-        if (viewType === name) {
-            cls = "c-r";
-        }
-        //
         return (
             <li className="nav__item">
                 <a
-                    // href={`#${name.toLowerCase()}`}
-                    onClick={() => clk_navItem(name)}
-                    className={"nav__link " + cls}
+                    onClick={clk_navItem}
+                    href={`#${name.toLowerCase()}`}
+                    className="nav__link"
                 >
-                    {name}
+                    {name.toUpperCase()}
                 </a>
             </li>
         );
     };
     const NavActions = () => {
+        //
+        //
         return (
             <div className="nav__actions">
                 <div className="DF AC JC" onClick={debugSX}>
@@ -85,7 +85,16 @@ export default function Header() {
                 >
                     <i className="ri-discord-fill"></i>
                 </a>
-
+                {viewType !== ViewType.Login && (
+                    <div onClick={() => clk_navAction("Login")} className="nav__link">
+                        Login
+                    </div>
+                )}
+                {viewType !== ViewType.Register && (
+                    <div onClick={() => clk_navAction("Register")} className="nav__link">
+                        Register
+                    </div>
+                )}
                 <div onClick={clk_navMenu} className="nav__toggle" id="nav-toggle">
                     <i className="ri-menu-line"></i>
                 </div>
@@ -104,14 +113,17 @@ export default function Header() {
     return (
         <header className="header" id="header">
             <nav className="nav container">
-                <div onClick={() => clk_navItem("Home")} className="nav__logo">
-                    <i className="ri-box-1-line"></i>i101.app
+                <div className="nav__item">
+                    <a onClick={clk_navItem} href="#key1" className="nav__logo">
+                        <i className="ri-box-1-line"></i>i101.app
+                    </a>
                 </div>
                 <div className={navMenuCls} id="nav-menu">
                     <ul className="nav__list">
-                        {Object.values(ViewType).map((t) => (
-                            <React.Fragment key={t}>{NavItem(t)}</React.Fragment>
-                        ))}
+                        {NavItem("key1")}
+                        {NavItem("data1")}
+                        {NavItem("key2")}
+                        {NavItem("data2")}
                     </ul>
 
                     {CloseMenu()}

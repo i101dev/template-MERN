@@ -59,7 +59,7 @@ export default function LoginScreen() {
                     {aliasInput.component}
                     {passwordInput.component}
                     {passConfInput.component}
-                    <input type="submit" className="form__button" value="Login" />
+                    <input type="submit" className="form__button" value="Register" />
                 </form>
             </div>
         </section>
