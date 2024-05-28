@@ -1,0 +1,60 @@
+.AlertModal {
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.886);
+}
+
+.AlertModal__list {
+    background-color: var(--dark-6);
+}
+
+.AlertModal__list-header {
+    font-size: 1.2rem;
+    color: var(--orn);
+}
+
+.AlertModal__list-item {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+    color: var(--medium-0);
+    padding-right: 0.5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+    .AlertModal__list {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .AlertModal__list {
+        width: 90%;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .AlertModal__list {
+        width: 80%;
+    }
+    .AlertModal__list-header {
+        font-size: 1.4rem;
+        color: var(--orn);
+    }
+
+    .AlertModal__list-item {
+        font-size: 1.1rem;
+        margin-left: 0.3rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .AlertModal__list {
+        width: 70%;
+    }
+}

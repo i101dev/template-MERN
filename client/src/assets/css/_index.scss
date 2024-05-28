@@ -1,0 +1,247 @@
+@import "./_gen/custom";
+
+/*=============== GOOGLE FONTS ===============*/
+@font-face {
+    font-family: "ShureTech";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""), url("../font/ShureTech.woff2") format("woff2");
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: var(--red);
+    --first-color-alt: hsl(12, 50%, 48%);
+    --first-color-light: hsl(14, 58%, 66%);
+    --title-color: var(--light-10);
+    --text-color: var(--medium-0);
+    --white-color: var(--light-4);
+    --black-color: hsl(228, 6%, 4%);
+    --body-color: hsl(228, 6%, 8%);
+    --container-color: hsl(228, 6%, 12%);
+    --gradient-card: linear-gradient(180deg, var(--dark-9), var(--dark-8));
+    --shadow-img: 0 0 48px hsla(23, 54%, 54%, 0.4);
+
+    --ylw: rgb(251, 255, 0);
+    --red: rgb(255, 38, 0);
+    --grn: rgb(103, 243, 10);
+    --blu: rgb(10, 187, 241);
+    --mag: rgba(226, 21, 226);
+    --orn: rgb(245, 163, 10);
+
+    --txt-sh: 1px 1px 2px var(--dark-4);
+
+    --light-0: rgb(250, 250, 250);
+    --light-1: rgb(245, 245, 245);
+    --light-2: rgb(240, 240, 240);
+    --light-3: rgb(235, 235, 235);
+    --light-4: rgb(230, 230, 230);
+    --light-5: rgb(225, 225, 225);
+    --light-6: rgb(220, 220, 220);
+    --light-7: rgb(215, 215, 215);
+    --light-8: rgb(210, 210, 210);
+    --light-9: rgb(205, 205, 205);
+    --light-10: rgb(200, 200, 200);
+    --light-11: rgb(195, 195, 195);
+    --light-12: rgb(190, 190, 190);
+    --light-12: rgb(185, 185, 185);
+    --light-13: rgba(180, 180, 180);
+
+    --medium-0: rgb(150, 150, 150);
+    --medium-1: rgb(145, 145, 145);
+    --medium-2: rgb(140, 140, 140);
+    --medium-3: rgb(135, 135, 135);
+    --medium-4: rgb(130, 130, 130);
+    --medium-5: rgb(125, 125, 125);
+    --medium-6: rgb(120, 120, 120);
+    --medium-7: rgb(115, 115, 115);
+    --medium-8: rgb(110, 110, 110);
+    --medium-9: rgb(105, 105, 105);
+    --medium-10: rgb(100, 100, 100);
+    --medium-12: rgb(95, 95, 95);
+    --medium-13: rgb(90, 90, 90);
+
+    --dark-0: rgba(70, 70, 70);
+    --dark-1: rgba(65, 65, 65);
+    --dark-2: rgba(60, 60, 60);
+    --dark-3: rgba(55, 55, 55);
+    --dark-4: rgba(50, 50, 50);
+    --dark-5: rgba(45, 45, 45);
+    --dark-6: rgba(40, 40, 40);
+    --dark-7: rgba(35, 35, 35);
+    --dark-8: rgba(30, 30, 30);
+    --dark-9: rgba(25, 25, 25);
+    --dark-10: rgba(20, 20, 20);
+    --dark-11: rgba(15, 15, 15);
+    --dark-12: rgba(10, 10, 10);
+    --dark-13: rgba(5, 5, 5);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "ShureTech", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --large-font-size: 1.6rem;
+    --normal-font-size: 1.2rem;
+    --small-font-size: 1rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 99;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.25rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    font-family: "ShureTech", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+// .Body1 {
+//     height: 100vh;
+//     width: 100vw;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.placeholder {
+    aspect-ratio: 1;
+    height: 256px;
+
+    display: flex;
+    padding: 3rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem;
+    color: orange;
+    background-color: var(--dark-11);
+    border: 1px solid var(--dark-10);
+    box-shadow: inset 3px 3px 3px -1px rgba(0, 0, 0, 0.4);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 1rem;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.Btn {
+    margin-left: auto;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: var(--first-color);
+    cursor: pointer;
+    transition: 0.4s;
+    border: 1px solid var(--black-color);
+    background-color: var(--container-color);
+}
+.Btn:hover {
+    background-color: var(--first-color);
+    color: var(--black-color);
+}
+
+.Scroll {
+    overflow-y: scroll;
+    scrollbar-color: var(--light-6) transparent;
+}
+
+/* ---------------------------------------------------- */
+@import "./listelement.scss";
+
+/* ---------------------------------------------------- */
+@import "./alertModal.scss";
+
+/* ---------------------------------------------------- */
+@import "./nav.scss";
+
+/* ---------------------------------------------------- */
+@import "./form.scss";
+
+/* ---------------------------------------------------- */
+@import "./keyinfo.scss";
+
+/* ---------------------------------------------------- */
+@import "./datapoints.scss";
+
+/* ---------------------------------------------------- */
+@import "./profile.scss";
+
+/* ---------------------------------------------------- */
+@import "./footer.scss";
+
+/* ---------------------------------------------------- */
+@import "./scroll.scss";
+
+/* ---------------------------------------------------- */
+@import "./breakpoints.scss";

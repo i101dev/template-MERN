@@ -1,0 +1,40 @@
+/*=============== HOME ===============*/
+.keyInfo__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    row-gap: 2rem;
+    align-items: center;
+}
+
+.keyInfo__img {
+    filter: drop-shadow(var(--shadow-img));
+    justify-self: center;
+}
+
+.keyInfo__data {
+    text-align: center;
+}
+
+.keyInfo__title {
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+
+.keyInfo__title span {
+    color: var(--first-color);
+}
+
+.keyInfo__description {
+    /* text-align: justify; */
+    margin-bottom: 3rem;
+    font-size: var(--h3-font-size);
+}
+
+.keyInfo__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+}

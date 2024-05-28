@@ -1,7 +1,7 @@
 //
 import { Request, Response } from "express";
 import { redisClient } from "../../config/connectDB";
-import { H, T } from "../../../__PKG__/X";
+import { H, T } from "../../../__PKG__/exp";
 //
 import mongoose from "mongoose";
 //

@@ -1,14 +1,13 @@
 //
 import React from "react";
-import { Input } from "../../../__PKG__/core/T";
+import { Input } from "../../../__PKG__/core/types";
 //
 //
 export default function MyInput(
     label: string,
     initVal: string,
     disabled: boolean,
-    type: Input,
-    cls: string = ""
+    type: Input
 ) {
     //
     //
@@ -18,16 +17,18 @@ export default function MyInput(
         setValue(event.target.value);
     };
     //
-    //
     const component = (
-        <input
-            type={type}
-            className={`Input ${cls}`}
-            onChange={inputHandler}
-            placeholder={label}
-            disabled={disabled}
-            value={value}
-        />
+        <div className="form__box">
+            <input
+                className="form__input"
+                onChange={inputHandler}
+                placeholder={""}
+                disabled={disabled}
+                type={type}
+                value={value}
+            />
+            <label className="form__label">{label}</label>
+        </div>
     );
     //
     const clear = () => setValue("");

@@ -3,7 +3,7 @@
 import mongoose, { Schema, Model, Document } from "mongoose";
 import bcrypt from "bcryptjs";
 //
-import { T } from "../../../__PKG__/X";
+import { T } from "../../../__PKG__/exp";
 //
 //
 type UserDoc = Document &

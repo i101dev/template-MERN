@@ -1,0 +1,113 @@
+/*=============== HOME ===============*/
+.form__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    row-gap: 2rem;
+    align-items: center;
+}
+
+.form__container h1 {
+    color: var(--orn);
+}
+
+.form__container .form__button {
+    margin-left: auto;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: var(--first-color);
+    border: 1px solid var(--black-color);
+    background-color: var(--container-color);
+    cursor: pointer;
+    transition: 0.4s;
+}
+.form__container .form__button:hover {
+    background-color: var(--first-color);
+    color: var(--black-color);
+}
+
+.form__group {
+    display: grid;
+    row-gap: 2rem;
+    width: 100%;
+}
+
+.form__data {
+    text-align: center;
+}
+
+.form__title {
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+
+.form__title span {
+    color: var(--first-color);
+}
+
+.form__description {
+    /* text-align: justify; */
+    margin-bottom: 3rem;
+    font-size: var(--h3-font-size);
+}
+
+.form__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.form__label {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    font-weight: bold;
+    color: var(--medium-13);
+    font-size: var(--medium-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--container-color);
+    padding: 8px 10px;
+    pointer-events: none;
+    transition: top 0.4s, opacity 0.4s, background-color 0.4s;
+    // opacity: 0;
+}
+
+.form__box {
+    position: relative;
+    width: 100%;
+    height: 58px;
+}
+
+.form__input {
+    box-shadow: inset 3px 3px 3px -1px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 2px;
+    background-color: var(--container-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    font-size: var(--large-font-size);
+    transition: border 0.4s, background-color 0.4s;
+    outline: none;
+    border: none;
+}
+
+.form__input:focus {
+    border: 3px solid var(--text-color);
+}
+
+.form__input:-webkit-autofill {
+    transition: background-color 6000s, color 6000s;
+}
+
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+    opacity: 1;
+    top: -18px;
+    color: var(--first-color);
+    // background-color: var(--text-color);
+}

@@ -1,21 +1,16 @@
-//
-//
 import React from "react";
 import ReactDOM from "react-dom/client";
-import RootCntx from "./providers/RootCntx";
-import SoxCntx from "./providers/SoxCntx";
-import App from "./components/App";
-//
-//
-import "../src/styles/_gen/_index.scss";
-//
-//
+import RootCtx from "./providers/RootCtx";
+import SoxCtx from "./providers/SoxCtx";
+import App from "./App.tsx";
+import "./assets/css/_index.scss";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <RootCntx>
-            <SoxCntx>
+        <RootCtx>
+            <SoxCtx>
                 <App />
-            </SoxCntx>
-        </RootCntx>
+            </SoxCtx>
+        </RootCtx>
     </React.StrictMode>
 );

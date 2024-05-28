@@ -1,7 +1,7 @@
 //
 import { Request, Response } from "express";
 //
-import { T, H } from "../../../__PKG__/X";
+import { T, H } from "../../../__PKG__/exp";
 //
 import jwt from "jsonwebtoken";
 //
@@ -71,7 +71,6 @@ export async function login(req: Request, res: Response) {
         if (cookieAndToken.success) {
             success = true;
             token = cookieAndToken.token;
-            H.addUserAlert(userAlerts, "Welcome back", ["no updates to report"]);
             //
         } else {
             H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
@@ -134,7 +133,7 @@ export async function register(req: Request, res: Response) {
                 success = true;
                 token = cookieAndToken.token;
                 //
-                H.addUserAlert(userAlerts, "Welcome", ["registration success"]);
+                // H.addUserAlert(userAlerts, "Welcome", ["registration success"]);
                 //
             } else {
                 H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
@@ -194,6 +193,53 @@ export async function tokenEntry(req: Request, res: Response) {
                 "token entry success",
                 "no updates to report",
             ]);
+            //
+        } else {
+            H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);
+        }
+    }
+    // ************************************************
+    //
+    //
+    res.status(200).send({ success, userAlerts, userDat, token });
+}
+export async function tokenCheck(req: Request, res: Response) {
+    //
+    // console.log("\n\n*** >>> [tokenCheck] - ", req.body);
+    //
+    const { user_id } = req.body;
+    //
+    const userDat = (await UserDat.findOne({ user_id })) as T.UserDat;
+    //
+    //
+    let token: string = "";
+    let success: boolean = false;
+    let userAlerts: T.UserAlert[] = [];
+    //
+    //
+    // ************************************************
+    if (!userDat) {
+        H.addUserAlert(userAlerts, "Invalid token", [
+            "usernames and passwords are case sensitive",
+        ]);
+        //
+    } else if (userDat.enabled === false) {
+        H.addUserAlert(userAlerts, "Not authorized", [
+            "this account has been disabled",
+            "perhaps you have offended the admin gods...?",
+            "thank you for your understanding",
+        ]);
+        //
+    } else {
+        //
+        const cookieAndToken = setCookieAndToken(user_id, res);
+        //
+        if (cookieAndToken.success) {
+            //
+            success = true;
+            token = cookieAndToken.token;
+            //
+            H.addUserAlert(userAlerts, "Token is valid", ["token check success"]);
             //
         } else {
             H.addUserAlert(userAlerts, "Fail!", ["Environment variables undefined"]);

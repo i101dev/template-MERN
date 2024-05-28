@@ -3,7 +3,7 @@
 //
 import { Server, Socket } from "socket.io";
 //
-import { RES, RT, T } from "../../__PKG__/X";
+import { RES, RT, T } from "../../__PKG__/exp";
 //
 //
 interface Connection {
