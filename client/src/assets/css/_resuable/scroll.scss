@@ -18,10 +18,11 @@
     position: fixed;
     right: 1rem;
     bottom: -50%;
+    border-radius: 50%;
     background-color: var(--container-color);
 
-    color: var(--grn);
-    border: 1px solid var(--grn);
+    color: var(--ylw);
+    border: 1px solid var(--ylw);
     box-shadow: 0 12px 24px hsla(228, 48%, 4%, 0.5);
     display: inline-flex;
     padding: 6px;

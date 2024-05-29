@@ -89,7 +89,7 @@ export default function Header() {
             <nav className="nav container">
                 <div className="nav__item">
                     <a onClick={clk_navItem} href="#key1" className="nav__logo">
-                        <i className="ri-box-1-line"></i>i101.app
+                        <i className="ri-box-1-line"></i>Template.app
                     </a>
                 </div>
                 <div className={navMenuCls} id="nav-menu">
