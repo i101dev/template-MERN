@@ -1,0 +1,100 @@
+/*=============== SECTION ===============*/
+.dataPoints__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataPoints__data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataPoints__data .dataPoints__title {
+    align-items: flex-start;
+}
+
+.dataPoints__title {
+    font-size: var(--large-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dataPoints__title span {
+    color: var(--first-color);
+}
+
+.dataPoints__list {
+    display: grid;
+    align-items: center;
+    row-gap: 2rem;
+    width: 94%;
+    padding: 1rem;
+    background-color: var(--container-color);
+}
+
+.dataPoints__item {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.dataPoints__item i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.dataPoints__item p {
+    font-size: var(--h3-font-size);
+}
+//
+// -----------------------------------------------------
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (max-width: 575px) {
+}
+@media screen and (min-width: 576px) {
+    .dataPoints__list {
+        width: 80%;
+    }
+    .dataPoints__title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .dataPoints__list {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .dataPoints__container {
+        display: flex;
+        column-gap: 3rem;
+        flex-direction: row;
+    }
+    .dataPoints__title {
+        font-size: 3rem;
+    }
+    .dataPoints__data {
+        text-align: initial;
+    }
+    .dataPoints__data .dataPoints__list,
+    .dataPoints__data .dataPoints__title {
+        align-self: flex-start;
+    }
+    .dataPoints__buttons {
+        justify-content: initial;
+        column-gap: 1.5rem;
+    }
+    .dataPoints__list {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+}

@@ -10,7 +10,7 @@ export default function ProfileScreen() {
     //
     const { token, userDat, goHome, takeRes } = UseRoot() as RootCntxType;
     //
-    const { debugSX, isConnected } = UseSox() as SoxCntxType;
+    const { debugSX } = UseSox() as SoxCntxType;
     const { fetch_POST } = MyApi();
     //
     //
@@ -59,7 +59,8 @@ export default function ProfileScreen() {
                 </div>
                 <div className="profile__data">
                     <div className="profile__data-username">{userDat?.user_id}</div>
-                    <div
+                    <div className="profile__data-username">{userDat?.email}</div>
+                    {/* <div
                         className={
                             isConnected
                                 ? "profile__data-isconnected"
@@ -67,7 +68,7 @@ export default function ProfileScreen() {
                         }
                     >
                         {isConnected ? "Connected" : "No connection"}
-                    </div>
+                    </div> */}
                 </div>
                 <button className="Btn" onClick={goHome}>
                     Logout

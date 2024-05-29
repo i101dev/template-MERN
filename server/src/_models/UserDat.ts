@@ -89,7 +89,7 @@ schema.methods.toJSON = function () {
     delete obj.createdAt;
     delete obj.updatedAt;
     delete obj.password;
-    delete obj.email;
+    // delete obj.email;
     //
     return obj;
 };

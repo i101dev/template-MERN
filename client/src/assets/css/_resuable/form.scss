@@ -114,3 +114,31 @@
     // border: 3px solid var(--first-color);
     background-color: var(--first-color);
 }
+//
+// -----------------------------------------------------
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+    .form__group {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .form__group {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+}
+
+@media screen and (max-width: 1149px) {
+}
+
+@media screen and (max-width: 575px) {
+}

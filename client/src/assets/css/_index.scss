@@ -1,4 +1,4 @@
-@import "./_gen/custom";
+@import "./_snips/custom";
 
 /*=============== GOOGLE FONTS ===============*/
 @font-face {
@@ -118,6 +118,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    letter-spacing: 1px;
 }
 
 html {
@@ -130,13 +131,6 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
 }
-
-// .Body1 {
-//     height: 100vh;
-//     width: 100vw;
-//     display: flex;
-//     flex-direction: column;
-// }
 
 h1,
 h2,
@@ -196,14 +190,14 @@ img {
 }
 
 .Btn {
-    margin-left: auto;
-    padding: 0.8rem 1rem;
-    font-size: 1.2rem;
     border-radius: 5px;
-    color: var(--first-color);
-    cursor: pointer;
+    margin-left: auto;
     transition: 0.4s;
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
     // font-weight: var(--font-bold);
+    color: var(--first-color);
     border: 1px solid var(--black-color);
     background-color: var(--container-color);
 }
@@ -212,12 +206,6 @@ img {
     color: var(--black-color);
 }
 
-.Pos-Rel {
-    position: relative;
-}
-.Pos-Abs {
-    position: absolute;
-}
 .Pos-Cen {
     position: absolute;
     top: 50%;
@@ -226,34 +214,56 @@ img {
 }
 
 /* ---------------------------------------------------- */
-@import "./loadingwall.scss";
+/* ---------------------------------------------------- */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-inline: 1rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .placeholder {
+        height: 384px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .placeholder {
+        height: 512px;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .placeholder {
+        height: 512px;
+    }
+
+    .container {
+        margin-inline: auto;
+    }
+
+    .section {
+        padding-block: 7rem 2rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+}
 
 /* ---------------------------------------------------- */
-@import "./listelement.scss";
-
 /* ---------------------------------------------------- */
-@import "./alertModal.scss";
-
+@import "./_resuable/loadingwall.scss";
+@import "./_resuable/listelement.scss";
+@import "./_resuable/alertModal.scss";
+@import "./_resuable/nav.scss";
+@import "./_resuable/form.scss";
+@import "./_resuable/keyinfo.scss";
+@import "./_resuable/datapoints.scss";
+@import "./_resuable/footer.scss";
+@import "./_resuable/scroll.scss";
 /* ---------------------------------------------------- */
-@import "./nav.scss";
-
 /* ---------------------------------------------------- */
-@import "./form.scss";
 
-/* ---------------------------------------------------- */
-@import "./keyinfo.scss";
-
-/* ---------------------------------------------------- */
-@import "./datapoints.scss";
-
-/* ---------------------------------------------------- */
+// -------------------------------------------------------
+// Project specific --------------------------------------
 @import "./profile.scss";
-
-/* ---------------------------------------------------- */
-@import "./footer.scss";
-
-/* ---------------------------------------------------- */
-@import "./scroll.scss";
-
-/* ---------------------------------------------------- */
-@import "./breakpoints.scss";

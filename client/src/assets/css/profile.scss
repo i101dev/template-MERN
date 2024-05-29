@@ -52,3 +52,25 @@
 .profile__data-notconnected {
     color: var(--red);
 }
+
+// -----------------------------------------------
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1150px) {
+}
+
+@media screen and (max-width: 1149px) {
+    .profile__container {
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+}

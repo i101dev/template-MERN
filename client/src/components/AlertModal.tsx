@@ -35,7 +35,7 @@ export default function ({
                                         className="AlertModal__alertList-item-data"
                                     >
                                         <FaCaretRight />
-                                        <div className="">{dir}</div>
+                                        <div>{dir}</div>
                                     </div>
                                 ))}
                             </div>
