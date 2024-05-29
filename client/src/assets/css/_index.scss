@@ -212,9 +212,17 @@ img {
     color: var(--black-color);
 }
 
-.Scroll {
-    overflow-y: scroll;
-    scrollbar-color: var(--light-6) transparent;
+.Pos-Rel {
+    position: relative;
+}
+.Pos-Abs {
+    position: absolute;
+}
+.Pos-Cen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 /* ---------------------------------------------------- */

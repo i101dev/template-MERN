@@ -43,7 +43,7 @@ function App() {
     //
     const ScrollUp = () => {
         return (
-            <a href="#" className="scrollup c-g B-1-G" id="scroll-up">
+            <a href="#" className="scrollup" id="scroll-up">
                 <i className="ri-arrow-up-line"></i>
             </a>
         );

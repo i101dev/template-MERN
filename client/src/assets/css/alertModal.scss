@@ -6,40 +6,59 @@
     background-color: rgba(0, 0, 0, 0.886);
 }
 
-.AlertModal__list {
+.AlertModal__alertList {
     background-color: var(--dark-6);
+    overflow-y: scroll;
+    padding: 1rem;
+    display: grid;
+    row-gap: 1rem;
 }
 
-.AlertModal__list-header {
+.AlertModal__alertList-header {
     font-size: 1.2rem;
     color: var(--orn);
 }
 
-.AlertModal__list-item {
+.AlertModal__alertList-item > div {
+    background-color: var(--dark-9);
+    border: 1px solid var(--dark-13);
+    padding: 1rem;
+    display: grid;
+    row-gap: 1rem;
+}
+
+.AlertModal__alertList-item-header {
+    font-size: 1.6rem;
+    color: var(--orn);
+}
+.AlertModal__alertList-item-data {
+    display: flex;
+    font-size: 1.2rem;
+}
+.AlertModal__alertList-item-data :first-child {
+    margin-top: 0.2rem;
+    color: var(--blu);
     font-size: 1rem;
-    margin-left: 0.3rem;
-    color: var(--medium-0);
-    padding-right: 0.5rem;
 }
 
 /*=============== BREAKPOINTS ===============*/
 // --------------------------------------
 @media screen and (max-width: 320px) {
-    .AlertModal__list {
+    .AlertModal__alertList {
         width: 100%;
     }
 }
 
 @media screen and (min-width: 576px) {
-    .AlertModal__list {
+    .AlertModal__alertList {
         width: 80%;
     }
-    .AlertModal__list-header {
+    .AlertModal__alertList-header {
         font-size: 1.4rem;
         color: var(--orn);
     }
 
-    .AlertModal__list-item {
+    .AlertModal__alertList-item {
         font-size: 1.1rem;
         margin-left: 0.3rem;
         padding-right: 0.5rem;
@@ -47,7 +66,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .AlertModal__list {
+    .AlertModal__alertList {
         width: 50%;
     }
 }
@@ -59,7 +78,7 @@
 }
 
 @media screen and (max-width: 575px) {
-    .AlertModal__list {
+    .AlertModal__alertList {
         width: 90%;
     }
 }

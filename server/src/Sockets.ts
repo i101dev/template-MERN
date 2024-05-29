@@ -84,6 +84,10 @@ function DebugConnections(socket: Socket, conns: Map<string, Connection>) {
                 "If something seems awry, refresh the page (F5) to reload and reconnect fresh",
             ],
         },
+        {
+            header: "This is a test message",
+            details: ["If you see this, you're gucci", "If you don't see this... FUCK!"],
+        },
     ];
     //
     socket.emit(RT.SX.test, { userAlerts });

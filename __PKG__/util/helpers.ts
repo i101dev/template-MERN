@@ -3,10 +3,6 @@
 import { UserAlert } from "./responses";
 //
 //
-export const headerCls = "BG-D4 BB-1-D5 FS-2 C-L6 P-1";
-export const iconSize = "2.5em";
-//
-//
 export function sh(x: number): number {
     return parseFloat(x.toFixed(3));
 }

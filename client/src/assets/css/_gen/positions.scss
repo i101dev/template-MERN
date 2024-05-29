@@ -1,17 +1,17 @@
 /* ------------------------------------ */
 
-.DF {
-    display: flex;
-}
-.FDR {
-    flex-direction: row;
-}
-.FDC {
-    flex-direction: column;
-}
-.FG-1 {
-    flex-grow: 1;
-}
+// .DF {
+//     display: flex;
+// }
+// .FDR {
+//     flex-direction: row;
+// }
+// .FDC {
+//     flex-direction: column;
+// }
+// .FG-1 {
+//     flex-grow: 1;
+// }
 
 /* ------------------------------------------ */
 
@@ -73,79 +73,79 @@
 
 /* ------------------------------------ */
 
-.TXT-S {
-    text-align: start;
-}
-.TXT-C {
-    text-align: center;
-}
-.TXT-E {
-    text-align: end;
-}
-.TXT-J {
-    text-align: justify;
-}
+// .TXT-S {
+//     text-align: start;
+// }
+// .TXT-C {
+//     text-align: center;
+// }
+// .TXT-E {
+//     text-align: end;
+// }
+// .TXT-J {
+//     text-align: justify;
+// }
 
 /* ------------------------------------ */
 
-.FCR > :first-child {
-    margin-left: auto;
-}
-.FCL > :first-child {
-    margin-right: auto;
-}
+// .FCR > :first-child {
+//     margin-left: auto;
+// }
+// .FCL > :first-child {
+//     margin-right: auto;
+// }
 
-.LCR > :last-child {
-    margin-left: auto;
-}
-.LCL > :last-child {
-    margin-right: auto;
-}
+// .LCR > :last-child {
+//     margin-left: auto;
+// }
+// .LCL > :last-child {
+//     margin-right: auto;
+// }
 
 /* ----------------------- */
 
-.SP-X-auto {
-    display: flex;
-    align-items: center;
-}
+// .SP-X-auto {
+//     display: flex;
+//     align-items: center;
+// }
 
-.SP-Y-auto {
-    display: flex;
-    flex-direction: column;
-}
+// .SP-Y-auto {
+//     display: flex;
+//     flex-direction: column;
+// }
 
-.SP-X-auto > :not(:last-child) {
-    margin-right: auto;
-}
-.SP-y-auto > :not(:last-child) {
-    margin-bottom: auto;
-}
+// .SP-X-auto > :not(:last-child) {
+//     margin-right: auto;
+// }
+// .SP-y-auto > :not(:last-child) {
+//     margin-bottom: auto;
+// }
 
-$spacing-values: (
-    "05": 0.5rem,
-    "1": 1rem,
-    "2": 2rem,
-    "3": 3rem,
-    "4": 4rem,
-    "5": 5rem,
-    "10": 10rem,
-);
+// $spacing-values: (
+//     "05": 0.5rem,
+//     "1": 1rem,
+//     "2": 2rem,
+//     "3": 3rem,
+//     "4": 4rem,
+//     "5": 5rem,
+//     "10": 10rem,
+// );
 
-@each $value, $spacing in $spacing-values {
-    .SP-X-#{$value},
-    .SP-Y-#{$value} {
-        display: flex;
-    }
+// @each $value, $spacing in $spacing-values {
+//     .SP-X-#{$value},
+//     .SP-Y-#{$value} {
+//         display: flex;
+//     }
 
-    .SP-Y-#{$value} {
-        flex-direction: column;
-    }
+//     .SP-Y-#{$value} {
+//         flex-direction: column;
+//     }
 
-    .SP-X-#{$value} > :not(:last-child) {
-        margin-right: $spacing;
-    }
+//     .SP-X-#{$value} > :not(:last-child) {
+//         margin-right: $spacing;
+//     }
 
-    .SP-Y-#{$value} > :not(:last-child) {
-        margin-bottom: $spacing;
-    }
-}
+//     .SP-Y-#{$value} > :not(:last-child) {
+//         margin-bottom: $spacing;
+//     }
+// }
