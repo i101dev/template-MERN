@@ -23,20 +23,13 @@
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
+// --------------------------------------
 @media screen and (max-width: 320px) {
     .AlertModal__list {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 575px) {
-    .AlertModal__list {
-        width: 90%;
-    }
-}
-
-/* For medium devices */
 @media screen and (min-width: 576px) {
     .AlertModal__list {
         width: 80%;
@@ -55,6 +48,18 @@
 
 @media screen and (min-width: 768px) {
     .AlertModal__list {
-        width: 70%;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+}
+
+@media screen and (max-width: 1149px) {
+}
+
+@media screen and (max-width: 575px) {
+    .AlertModal__list {
+        width: 90%;
     }
 }

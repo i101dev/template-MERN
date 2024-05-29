@@ -9,10 +9,10 @@ import { FaSpinner } from "react-icons/fa";
 //
 function LoadingWall() {
     return (
-        <div className="Pos-Abs BG-D13 Z90 H-100 W-100">
-            <div className="BG-D3 P-2 SH Pos-Cen B-2-D4 SP-X-2">
-                <div className="FS-3 c-r PT-025">Please wait</div>
-                <FaSpinner className="c-y spinner" size={"3em"} />
+        <div className="LoadingWall">
+            <div className="Pos-Cen LoadingWall__panel">
+                <div className="LoadingWall__panel-message">Please wait</div>
+                <FaSpinner className="LoadingWall__panel-spinner" />
             </div>
         </div>
     );

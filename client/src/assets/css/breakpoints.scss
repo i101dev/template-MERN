@@ -6,12 +6,6 @@
     }
 }
 
-@media screen and (max-width: 575px) {
-    .dataPoints__list {
-        width: 94%;
-    }
-}
-
 /* For medium devices */
 @media screen and (min-width: 576px) {
     .placeholder {
@@ -65,7 +59,7 @@
     .nav__list {
         flex-direction: row;
         column-gap: 3.5rem;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .nav__actions {
         font-size: 1.4rem;
@@ -120,5 +114,25 @@
     }
     .profile__container {
         margin-top: 1.5rem;
+    }
+}
+@media screen and (max-width: 575px) {
+    .dataPoints__list {
+        width: 94%;
+    }
+    .nav__logo {
+        font-size: 1rem;
+    }
+    .nav__logo i {
+        font-size: 1.2rem;
+    }
+    .nav__list {
+        // flex-direction: row;
+        column-gap: 3.5rem;
+        font-size: 1rem;
+    }
+    .nav__actions {
+        font-size: 1rem;
+        column-gap: 1rem;
     }
 }

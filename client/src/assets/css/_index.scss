@@ -203,6 +203,7 @@ img {
     color: var(--first-color);
     cursor: pointer;
     transition: 0.4s;
+    // font-weight: var(--font-bold);
     border: 1px solid var(--black-color);
     background-color: var(--container-color);
 }
@@ -215,6 +216,9 @@ img {
     overflow-y: scroll;
     scrollbar-color: var(--light-6) transparent;
 }
+
+/* ---------------------------------------------------- */
+@import "./loadingwall.scss";
 
 /* ---------------------------------------------------- */
 @import "./listelement.scss";
