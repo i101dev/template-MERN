@@ -11,7 +11,6 @@
 }
 
 .nav {
-    position: relative var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,9 +111,6 @@
 }
 
 @media screen and (min-width: 1150px) {
-    .nav {
-        height: calc(var(--header-height) + 2rem);
-    }
     .nav__toggle,
     .nav__close {
         display: none;

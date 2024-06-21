@@ -5,10 +5,11 @@ import { RootCntxType, UseRoot, ViewType } from "./providers/RootCtx";
 //
 import Header from "./Header";
 import Footer from "./Footer";
+//
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
-import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 //
 //
 function App() {
