@@ -109,7 +109,7 @@
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
     opacity: 1;
-    top: -20px;
+    top: -14px;
     color: var(--black-color);
     // border: 3px solid var(--first-color);
     background-color: var(--first-color);

@@ -43,7 +43,7 @@ const NavActions = ({
                         onClick={() => clk_navAction(ViewType.Register)}
                         className="nav__link"
                     >
-                        Register
+                        Join
                     </div>
                 )}
             </>

@@ -53,13 +53,13 @@ export default function LoginScreen() {
     return (
         <section className="section" id="login">
             <div className="form__container container grid">
-                <h1>Register</h1>
+                <h1>Create Account</h1>
                 <form className="form__group" onSubmit={registerHandler}>
                     {emailInput.component}
                     {aliasInput.component}
                     {passwordInput.component}
                     {passConfInput.component}
-                    <input type="submit" className="form__button" value="Register" />
+                    <input type="submit" className="form__button" value="Confirm" />
                 </form>
             </div>
         </section>
