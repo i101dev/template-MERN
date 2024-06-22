@@ -11,7 +11,7 @@
     color: var(--orn);
 }
 
-.form__container .form__button {
+.form__button {
     margin-left: auto;
     padding: 0.8rem 1rem;
     font-size: 1.2rem;
@@ -22,7 +22,7 @@
     cursor: pointer;
     transition: 0.4s;
 }
-.form__container .form__button:hover {
+.form__button:hover {
     background-color: var(--first-color);
     color: var(--black-color);
 }
@@ -111,7 +111,6 @@
     opacity: 1;
     top: -14px;
     color: var(--black-color);
-    // border: 3px solid var(--first-color);
     background-color: var(--first-color);
 }
 //

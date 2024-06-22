@@ -15,21 +15,24 @@ function setCookieAndToken(
     res: Response
 ): { token: string; success: boolean } {
     //
+    //
     if (!process.env.COOKIE_NAME || !process.env.ADMIN_KEY) {
+        console.log("COOKIE_NAME -", process.env.COOKIE_NAME);
+        console.log("ADMIN_KEY -", process.env.ADMIN_KEY);
         return { token: "", success: false };
     }
     //
-    // console.log("COOKIE_NAME -", process.env.COOKIE_NAME);
-    // console.log("ADMIN_KEY -", process.env.ADMIN_KEY);
     //
     const token = jwt.sign({ user_id }, process.env.ADMIN_KEY!, {
         expiresIn: "2d",
     });
     //
+    //
     res.cookie(process.env.COOKIE_NAME!, token, {
         httpOnly: true,
         maxAge: 2 * 24 * 60 * 60 * 1000,
     });
+    //
     //
     return { token, success: true };
 }

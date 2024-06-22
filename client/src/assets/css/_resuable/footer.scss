@@ -1,32 +1,13 @@
 .footer {
-    margin-top: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0rem;
+    left: 0;
 }
 .footer__copy {
     display: block;
-    margin-top: 6rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
     text-align: center;
     font-size: var(--small-font-size);
-}
-//
-// -----------------------------------------------------
-@media screen and (max-width: 320px) {
-}
-
-@media screen and (min-width: 576px) {
-}
-
-@media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 1150px) {
-}
-
-@media screen and (max-width: 1150px) {
-}
-
-@media screen and (max-width: 1149px) {
-}
-
-@media screen and (max-width: 575px) {
 }
