@@ -12,8 +12,7 @@
 .LoadingWall__panel {
     background-color: var(--dark-10);
     border: 2px solid var(--dark-8);
-    border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +42,6 @@
 /* For small devices */
 @media screen and (max-width: 320px) {
     .LoadingWall__panel {
-        padding: 1rem;
         width: 200px;
     }
     .LoadingWall__panel-message {
@@ -57,7 +55,6 @@
 /* For medium devices */
 @media screen and (min-width: 576px) {
     .LoadingWall__panel {
-        padding: 2rem;
         width: 315px;
     }
     .LoadingWall__panel-message {
@@ -79,7 +76,6 @@
 
 @media screen and (max-width: 575px) {
     .LoadingWall__panel {
-        padding: 1rem;
         width: 200px;
     }
     .LoadingWall__panel-message {

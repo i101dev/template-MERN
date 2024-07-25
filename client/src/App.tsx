@@ -57,7 +57,7 @@ function App() {
 
             <main className="main">{viewComp}</main>
 
-            <Footer />
+            {/* <Footer /> */}
 
             {ScrollUp()}
         </div>
